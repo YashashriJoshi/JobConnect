@@ -1,0 +1,65 @@
+<div class="px-4 mt-4">
+    <section class="flex flex-column sm:align-items-center md:flex-row lg:flex-row">
+        <div class="w-full">
+            <div class="welcome-heading">
+                <h1 class="mt-0 mb-1 text-3xl">Welcome to Accomplishment!</h1>
+                <h5 class="mt-0 text-600 text-xl">Achieve your dreams with samsiddhi</h5>
+            </div>
+            <div class="form">
+                <form [formGroup]="loginForm">
+                    <label for="email" class="block text-700 font-medium mb-2">Email or Mobile</label>
+                    <input id="email" type="text" pInputText class="w-full md:w-6 lg:w-6" formControlName="name"
+                        autocomplete="off">
+                    <div>
+                        <small id="email-help" class="p-error"
+                            *ngIf="submitted && loginForm?.get('name')?.hasError('required')">Email address or mobile
+                            is required.</small>
+                    </div>
+
+                    <label for="password" class="block text-700 font-medium mt-3 mb-2">Password</label>
+                    <div class="w-full md:w-6 lg:w-6 relative flex align-items-center">
+                        <input #passwordField id=" password" type="password" pInputText class="w-full"
+                            formControlName="password" autocomplete="new-password">
+                        <span class="absolute eye-icon cursor-pointer" (click)="togglePasswordVisibility()">
+                            <i class="pi pi-eye" *ngIf="!passwordVisible"></i>
+                            <i class="pi pi-eye-slash" *ngIf="passwordVisible"></i>
+                        </span>
+                    </div>
+                    <div>
+                        <small id="password-help" class="p-error"
+                            *ngIf="submitted && loginForm?.get('password')?.hasError('required')">Password is
+                            required.</small>
+                    </div>
+
+                    <div class="flex align-items-center justify-content-between mb-3 mt-3 w-full md:w-6 lg:w-6">
+                        <div class="flex align-items-center">
+                            <!-- <p-checkbox inputId="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>
+                                <label for="rememberme1" class="text-0">Remember me</label> -->
+                        </div>
+                        <a [routerLink]="['/forgot-password']"
+                            class="font-medium no-underline ml-2 text-blue-600 text-right cursor-pointer">Forgot
+                            password?</a>
+                    </div>
+                    <div *ngIf="error" class="alert alert-danger mt-3 mb-3 text-center">
+                        <span>{{error}}</span> <i class="pi pi-times-circle float-end mt-1"></i>
+                    </div>
+                    <div class="mt-2 w-full md:w-6 lg:w-6">
+                        <p-button [label]="signInLabel" [raised]="true" [rounded]="true" [loading]="loading"
+                            type="submit" icon="pi pi-user" (onClick)="login()" class="w-full"></p-button>
+                    </div>
+                </form>
+            </div>
+            <div class="w-full md:w-6 lg:w-6">
+                <p-divider align="center">
+                    <p>Or</p>
+                </p-divider>
+            </div>
+            <div class="w-full md:w-6 lg:w-6">
+                <p-button label="Sign up" [outlined]="true" [rounded]="true" severity="secondary" class="w-full"
+                    [routerLink]="['/auth/sign-up']"></p-button>
+            </div>
+        </div>
+        <img src="../../../../assets/login-slide.avif" class="login-side-image block flex-shrink-1"
+            alt="login page image" height="500" width="400">
+    </section>
+</div>

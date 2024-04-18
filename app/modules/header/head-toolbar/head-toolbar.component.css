@@ -1,0 +1,102 @@
+.card {
+    top: 0;
+    position: sticky;
+    z-index: 1002;
+    border-radius: 0;
+}
+
+:host::ng-deep .p-toolbar {
+    border: none;
+    padding: .5rem;
+    border-radius: 0px;
+    /* background-color: chocolate; */
+}
+
+/*theme icon icon style start*/
+:host::ng-deep .p-button.p-button-secondary.p-button-text {
+    /* color: #ffffff; */
+    opacity: 0.8;
+}
+
+:host::ng-deep .p-button.p-button-secondary.p-button-text:hover {
+    opacity: 1;
+    color: #8ac8ff;
+    animation: breathingAnimation .3s 1 ease-in-out forwards;
+}
+
+:host::ng-deep .p-button.p-button-secondary:enabled:focus {
+    box-shadow: none;
+}
+
+/*theme icon style end*/
+
+/*full screen icon style start*/
+.full-screen-icon {
+    opacity: 0.9;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.full-screen-icon.full-screen {
+    transform: rotate(90deg);
+}
+
+.full-screen-icon.hover:hover {
+    animation: rotateAnimation 0.3s ease;
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes breathingAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.bi-fullscreen {
+    opacity: 0.9;
+    overflow: hidden;
+    /* color: #ffffff; */
+    height: 28px;
+    width: 28px;
+}
+
+.bi-fullscreen:hover {
+    opacity: 1;
+    animation: breathingAnimation .3s 1 ease-in-out forwards;
+}
+
+.bi-fullscreen-exit {
+    opacity: 0.9;
+    overflow: hidden;
+}
+
+.bi-fullscreen-exit:hover {
+    opacity: 1;
+    animation: breathingAnimation .3s 1 ease-in-out forwards;
+}
+
+#fullscreen-svg:hover path,
+#fullscreen-exit-svg:hover path {
+    fill: #8ac8ff;
+}
+
+/*full screen icon style end*/

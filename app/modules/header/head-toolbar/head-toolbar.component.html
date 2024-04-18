@@ -1,0 +1,29 @@
+<div class="card shadow-3">
+    <p-toolbar>
+        <div class="p-toolbar-group-start">
+
+        </div>
+        <div class="p-toolbar-group-end">
+            <span class="full-screen-icon" (click)="toggleFullScreen()" [class.full-screen]="isFullScreen"
+                (mouseenter)="hover = true" (mouseleave)="hover = false">
+                <svg *ngIf="!isFullScreen && !isMobileScreen" class="bi-fullscreen" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="currentcolor" id="fullscreen-svg">
+                    <title>fullscreen</title>
+                    <path d="M5,5H10V7H7V10H5V5M14,5H19V10H17V7H14V5M17,14H19V19H14V17H17V14M10,17V19H5V14H7V17H10Z" />
+                </svg>
+                <svg *ngIf="isFullScreen && !isMobileScreen" class="bi-fullscreen-exit"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentcolor" id="fullscreen-exit-svg">
+                    <title>fullscreen-exit</title>
+                    <path d="M14,14H19V16H16V19H14V14M5,14H10V19H8V16H5V14M8,5H10V10H5V8H8V5M19,8V10H14V5H16V8H19Z" />
+                </svg>
+            </span>
+            <p-button class="mr-1" severity="secondary" [icon]="themeButtonIcon" [rounded]="true" [text]="true"
+                (click)="toggleTheme()"></p-button>
+            <p class="mr-2 mb-0 mt-0">{{ currentDateTime | date : "short" }}</p>
+
+            <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/ionibowcher.png"
+                styleClass="mr-2 avatar" size="large" [style]="{cursor: 'pointer'}" shape="circle" styleClass="mr-2"
+                shape="circle"></p-avatar>
+        </div>
+    </p-toolbar>
+</div>

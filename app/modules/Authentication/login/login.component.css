@@ -1,0 +1,28 @@
+.eye-icon {
+    right: 1rem;
+    top: .6rem;
+}
+
+.form a:hover {
+    text-decoration: underline !important;
+}
+
+:host::ng-deep .p-button-raised {
+    width: 100% !important;
+}
+
+:host::ng-deep .p-disabled,
+.p-component:disabled {
+    opacity: 1;
+}
+
+:host::ng-deep .p-button-outlined {
+    width: 100% !important;
+}
+
+@media (max-width: 767px) {
+    .login-side-image {
+        width: 300px;
+        height: 300px;
+    }
+}

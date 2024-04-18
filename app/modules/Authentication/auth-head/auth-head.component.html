@@ -1,0 +1,35 @@
+<!--Toolbar for auth modules-->
+<div class="card">
+    <p-toolbar>
+        <div class="p-toolbar-group-start">
+            <i *ngIf="isMobileScreen" class="p-toolbar-separator pi pi-bars mr-3"
+                style="vertical-align: middle; cursor: pointer" (click)="toggle()"></i>
+            <a href="#" class="cursor-pointer">
+                <img src="../../../../assets/MicrosoftTeams-image.png" alt="samsiddhi logo" width="150px">
+            </a>
+        </div>
+        <div class="p-toolbar-group-end">
+            <div class="flex justify-content-between align-items-center">
+                <p-button label="About" [text]="true"></p-button>
+                <p-button label="Contact" [text]="true"></p-button>
+                <p-button label="Blogs" [text]="true"></p-button>
+                <p-button label="Forums" [text]="true"></p-button>
+                <p-divider layout="vertical"></p-divider>
+                <p-button label="Join now" [rounded]="true"></p-button>
+            </div>
+        </div>
+    </p-toolbar>
+</div>
+
+<!--sidenav-->
+<p-sidebar [(visible)]="isSidebarVisible">
+    <ng-template pTemplate="header">
+        <img src="../../../../assets/MicrosoftTeams-image.png" alt="samsiddhi logo" width="150px">
+    </ng-template>
+    <ng-template pTemplate=" content">
+
+    </ng-template>
+    <ng-template pTemplate="footer">
+
+    </ng-template>
+</p-sidebar>

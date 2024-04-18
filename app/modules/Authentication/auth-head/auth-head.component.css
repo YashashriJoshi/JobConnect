@@ -1,0 +1,10 @@
+.card {
+    background-color: #ffffff;
+}
+
+:host::ng-deep .p-toolbar {
+    border: none;
+    /* padding: .5rem; */
+    border-radius: 0px;
+    background-color: #ffffff;
+}
